@@ -5,20 +5,40 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+
 import { HomePage } from '../pages/home/home';
+import { CommentPage } from '../pages/comment/comment';
+import { LoginPage } from '../pages/login/login';
+import { PlaygroundPage } from '../pages/playground/playground';
+import { RegisterPage } from '../pages/register/register';
+
+import { HttpWithTokenProvider } from '../providers/http-with-token/http-with-token';
+import { HttpModule } from '@angular/http';
+import 'rxjs/add/operator/toPromise';
+
+
 
 @NgModule({
   declarations: [
     MyApp,
+    CommentPage,
+    LoginPage,
+    PlaygroundPage,
+    RegisterPage,
     HomePage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    CommentPage,
+    LoginPage,
+    PlaygroundPage,
+    RegisterPage,
     HomePage
   ],
   providers: [
