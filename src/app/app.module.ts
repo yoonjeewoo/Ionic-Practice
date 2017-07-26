@@ -12,9 +12,10 @@ import { LoginPage } from '../pages/login/login';
 import { PlaygroundPage } from '../pages/playground/playground';
 import { RegisterPage } from '../pages/register/register';
 
-import { HttpWithTokenProvider } from '../providers/http-with-token/http-with-token';
+// import { HttpWithTokenProvider } from '../providers/http-with-token/http-with-token';
 import { HttpModule } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 
@@ -30,6 +31,7 @@ import 'rxjs/add/operator/toPromise';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     HttpModule
   ],
   bootstrap: [IonicApp],

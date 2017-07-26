@@ -4,7 +4,7 @@ import { Http, Headers } from '@angular/http';
 import { HomePage } from '../home/home';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
-
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the LoginPage page.
  *
@@ -22,9 +22,10 @@ export class LoginPage {
     email: '',
     password: ''
   };
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http, private storage: Storage) {
 
   }
+
   userLogin() {
 
     let headers = new Headers();
@@ -33,10 +34,11 @@ export class LoginPage {
       email : this.login.email,
       password : this.login.password
     };
-    this.http.post('http://fashionpo.xyz/api/auth/login', JSON.stringify(body), {headers: headers})
+    this.http.post('/auth/login', JSON.stringify(body), {headers: headers})
       .map(res => res.json())
       .subscribe(data => {
-          this.navCtrl.push(HomePage);
+        this.storage.set('token', data.token);
+        this.navCtrl.push(HomePage);
       });
   }
 
