@@ -6,7 +6,8 @@ import {PlaygroundPage} from "../playground/playground";
 import {RegisterPage} from "../register/register";
 
 @Component({
-  templateUrl: 'tabs.html'
+  templateUrl: 'tabs.html',
+  selector: 'tabs'
 })
 export class TabsPage {
 
