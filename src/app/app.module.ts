@@ -16,6 +16,7 @@ import { RegisterPage } from '../pages/register/register';
 import { HttpModule } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { IonicStorageModule } from '@ionic/storage';
+import {TabsPage} from "../pages/tabs/tabs";
 
 
 
@@ -26,7 +27,8 @@ import { IonicStorageModule } from '@ionic/storage';
     LoginPage,
     PlaygroundPage,
     RegisterPage,
-    HomePage
+    HomePage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import { IonicStorageModule } from '@ionic/storage';
     LoginPage,
     PlaygroundPage,
     RegisterPage,
-    HomePage
+    HomePage,
+    TabsPage
   ],
   providers: [
     StatusBar,

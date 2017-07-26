@@ -5,6 +5,7 @@ import { HomePage } from '../home/home';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 import { Storage } from '@ionic/storage';
+import {TabsPage} from "../tabs/tabs";
 /**
  * Generated class for the LoginPage page.
  *
@@ -38,7 +39,7 @@ export class LoginPage {
       .map(res => res.json())
       .subscribe(data => {
         this.storage.set('token', data.token);
-        this.navCtrl.push(HomePage);
+        this.navCtrl.push(TabsPage);
       });
   }
 
