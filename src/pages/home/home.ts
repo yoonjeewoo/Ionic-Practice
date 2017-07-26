@@ -36,9 +36,21 @@ export class HomePage {
           }
         });
     });
+  }
+  ionViewWillEnter() {
+    this.storage.get('token').then((val) => {
+      let headers = new Headers();
+      headers.append('Content-Type', 'text/plain');
+      headers.append('x-access-token', val);
+      // console.log(val);
 
-
-
-
+      this.http.get('/rank', {headers: headers})
+        .map(res => res.json())
+        .subscribe(data => {
+          for(var i=0;i<data.posts.length;i++) {
+            this.ranks[i] = data.posts[i];
+          }
+        });
+    });
   }
 }

@@ -15,10 +15,16 @@ import { NavController, NavParams } from 'ionic-angular';
 export class PlaygroundPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PlaygroundPage');
+
+  }
+  ionViewWillEnter() {
+
+    console.log('reload PlaygroundPage');
   }
 
 }

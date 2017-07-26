@@ -20,5 +20,8 @@ export class RegisterPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
   }
+  ionViewWillEnter() {
+    console.log('reload PlaygroundPage');
+  }
 
 }
